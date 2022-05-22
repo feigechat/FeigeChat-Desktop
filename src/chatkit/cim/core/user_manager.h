@@ -1,6 +1,6 @@
 /** @file im_user_manager.h
  * @brief im_user_manager
- * @author teng.qing
+ * @author xmcy0011@sina.com
  * @date 2021/1/15
  */
 
