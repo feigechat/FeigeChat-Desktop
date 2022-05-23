@@ -23,17 +23,29 @@ set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ${QT_SDK_DIR})
 
 # 在QT Creator中找不到，需要手动include
 if (IN_CLION_IDE)
-    find_package(Protobuf CONFIG REQUIRED)
 
 else()
     message("current in qt creator")
 
-    # protobuf 通过vcpkg安装
-    set(VCPKG_INCLUDE_DIR /Users/xuyc/repo/github/vcpkg/installed/x64-osx/include)
-    set(VCPKG_LIB_DIR /Users/xuyc/repo/github/vcpkg/installed/x64-osx/lib)
+    # 公共第三方依赖
+    set(THIRD_LIB_DIR
+            ../3rd-party/lib
+            ../3rd-party/lib/lib         # protobuf
+            )
+    set(THIRD_INCLUDE_DIR
+            ../3rd-party/spdlog-1.9.2/include
+            ../3rd-party/libuv-1.44.1/include
+            ../3rd-party/lib/include/            # protobuf
+            ../3rd-party/SQLiteCpp-3.1.1/include # SQLiteCPP
+            )
 
-    include_directories(../chatkit ${VCPKG_INCLUDE_DIR})
-    link_directories(../cmake-build-debug/chatkit ${VCPKG_LIB_DIR})
+    # im sdk
+    set(CHATKIT_INCLUDE_DIR ../chatkit)
+    set(CHATKIT_LIB_DIR ../cmake-build-debug/chatkit)
+
+    # im sdk
+    include_directories(${CHATKIT_INCLUDE_DIR} ${THIRD_INCLUDE_DIR})
+    link_directories(${CHATKIT_LIB_DIR} ${THIRD_LIB_DIR})
 endif ()
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)

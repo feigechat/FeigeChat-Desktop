@@ -14,9 +14,9 @@
 namespace cim {
 namespace base {
 
-// 10 s timer空转一次
+// 10s timer空转一次
 static uv_timer_s *g_default_timer_ = nullptr;
-const int kIdleTick = 10 * 1000;
+const int kIdleTick = 1 * 1000;
 
 std::atomic_bool EventLoop::loop_is_run_(false);
 
@@ -49,6 +49,7 @@ void EventLoop::stop() {
 void EventLoop::runInThread() {
     std::thread t(run);
     t.detach();
+    std::this_thread::sleep_for(std::chrono::milliseconds(200));
 }
 
 uv_timer_s *EventLoop::registerTimer(const timer_cb &cb, uint64_t repeat, uint64_t timeout) {

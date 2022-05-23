@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>CoffeeChat</string>
+   <string>登录</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -45,9 +45,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>132</x>
-     <y>166</y>
-     <width>116</width>
+     <x>160</x>
+     <y>180</y>
+     <width>61</width>
      <height>37</height>
     </rect>
    </property>
@@ -58,31 +58,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Telegram</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>55</x>
-     <y>206</y>
-     <width>271</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(199, 199, 199);</string>
-   </property>
-   <property name="text">
-    <string>Welcome to the macOS application</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <string>飞鸽</string>
    </property>
   </widget>
   <widget class="QLabel" name="labError">
